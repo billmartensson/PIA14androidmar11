@@ -3,6 +3,7 @@ package se.magictechnology.pia14androidmar11
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -57,11 +58,23 @@ fun Shoppinglist(shopvm : ShoppingViewModel = viewModel()) {
 
         LazyColumn() {
             items(shopdata.value.size) { index ->
-                Row() {
+                Row(modifier = Modifier.height(80.dp)) {
                     Text(shopdata.value[index].name.toString())
                     Text(shopdata.value[index].amount.toString())
+
+                    Button(onClick = {
+                        shopvm.deleteshopitem(shopdata.value[index])
+                    }) {
+                        Text("Radera")
+                    }
                 }
             }
+        }
+
+        Button(onClick = {
+            shopvm.logout()
+        }) {
+            Text("Logga ut")
         }
     }
 }

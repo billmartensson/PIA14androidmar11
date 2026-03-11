@@ -24,8 +24,14 @@ fun Login(shopvm : ShoppingViewModel = viewModel()) {
     var loginemail by remember { mutableStateOf("") }
     var loginpassword by remember { mutableStateOf("") }
 
+    var errormessage by remember { mutableStateOf<String?>(null) }
+
     Column() {
         Text("Login")
+
+        if(errormessage != null) {
+            Text(errormessage!!)
+        }
 
         TextField(
             modifier = Modifier.fillMaxWidth(),
@@ -40,12 +46,17 @@ fun Login(shopvm : ShoppingViewModel = viewModel()) {
         )
 
         Button(onClick = {
-
+            shopvm.login(loginemail, loginpassword) {
+                errormessage = it
+            }
         }) {
             Text("Login")
         }
-        Button(onClick = {
 
+        Button(onClick = {
+            shopvm.register(loginemail, loginpassword) {
+                errormessage = it
+            }
         }) {
             Text("Register")
         }
