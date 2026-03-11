@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "527719261598",
+    "firebase_url": "https://pia14-bdf2a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pia14-bdf2a",
+    "storage_bucket": "pia14-bdf2a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527719261598:android:e30016502caba572b9a28f",
+        "android_client_info": {
+          "package_name": "se.magictechnology.pia14androidmar11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0_ZjkmY4cAYuAHRNuLX319Vu8pQamP_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
