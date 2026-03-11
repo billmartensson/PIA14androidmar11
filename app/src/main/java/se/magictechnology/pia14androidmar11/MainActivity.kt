@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
             PIA14androidmar11Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
-                        Testingfb()
+                        ShopStart()
                     }
                 }
             }

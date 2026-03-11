@@ -64,6 +64,6 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-database")
 
-
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 
 }
