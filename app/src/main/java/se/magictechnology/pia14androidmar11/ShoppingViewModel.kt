@@ -8,6 +8,7 @@ import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
 import com.google.firebase.database.getValue
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -35,6 +36,8 @@ class ShoppingViewModel : ViewModel() {
                 _isloggedin.value = true
             }
         }
+
+        getFCMtoken()
     }
 
     fun logout() {
@@ -131,4 +134,13 @@ class ShoppingViewModel : ViewModel() {
 
 
     }
+
+
+    fun getFCMtoken() {
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { tokenstring ->
+            Log.i("PIA14DEBUG", tokenstring)
+        }
+
+    }
+
 }
